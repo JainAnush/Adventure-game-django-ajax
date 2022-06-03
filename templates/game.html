@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static "javascript/myscript.js" %}" type="text/javascript"></script>
+  </head>
+  <body style="background-color:HoneyDew">
+    <div id="title">
+      {% csrf_token %}
+      <center>
+        <h1>LETS PLAY THE GAME</h1>
+        <h2>BEFORE STARTING PLEASE GENERATE THE SECRET DESTINATION</h2>
+        <h2>HINT : THE DESTINATION WILL BE SOMEWHERE BETWEEN (1,1) AND (3,3)</h2>
+      </center>
+    </div>
+    <div id="secret"></div>
+    <div id="user"></div>
+    <div id="div1">
+      <center>
+        <h1>CHOOSE A DIRECTION</h1>
+        <input type="radio" name="direction" id="up" value="1" /><b>MOVE UP</b>
+        <input type="radio" name="direction" id="right" value="2"/><b>MOVE RIGHT</b>
+        <input type="radio" name="direction" id="left" value="3"/><b>MOVE LEFT</b> 
+        <input type="radio" name="direction" id="down" value="4"/><b>MOVE DOWN</b><br /><br />
+        ENTER LENGTH
+        <input type="number" id="length"/><br /><br />
+        <input type="button" value="GENERATE YOUR SECRET DESTINATION" onclick="process()" />
+        <input type="button" value="MAKE A MOVE" onclick="move()" />        
+        <a href="/quit"><input type="button" value="QUIT GAME" ></a>
+      </center>
+    </div>
+    <div id="ansx"></div>
+    <div id="ansy"></div>
+    <div id="finalresult"></div>
+  </body>
+</html>
